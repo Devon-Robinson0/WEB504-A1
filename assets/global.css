@@ -1,0 +1,43 @@
+:root {
+    --black: #111;
+    --navy: #14213d;
+    --gold: #fca311;
+    --white: #e5e5e5;
+}
+
+body {
+    background-color: var(--black);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.shadow {
+    filter: drop-shadow(0 0 10px rgba(255,255,255,.4));
+}
+
+nav {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+
+    width: 500px;
+    height: 80px;
+
+    background-color: white;
+    clip-path: path("M 420,0 A 40,40 0,0,1 460,40 L 460,40 A 40,40 0,0,0 500,80 L 0,80 L 0,0 L 460,0 Z");
+}
+
+.bottom-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100vw;
+    height: 10px;
+
+    background-color: white;
+}
