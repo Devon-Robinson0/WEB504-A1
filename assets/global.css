@@ -1,12 +1,77 @@
 :root {
     --black: #111;
+    --dark: #1a1a1a;
     --navy: #14213d;
-    --gold: #fca311;
+    --purple: #c77dff;
+    --dim-purple: #9d4edd;
     --white: #e5e5e5;
 }
 
 body {
     background-color: var(--black);
+
+    width: 100vw;
+    margin: 0;
+}
+
+main {
+    margin-top: 5rem;
+    height: 100vh;
+
+    background-color: blue;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 5rem;
+
+    background-color: var(--dark);
+    border-radius: 0 0 40px 40px;
+    /* border-bottom: 2px solid var(--gold); */
+    /* box-shadow: 0 0 5px var(--gold); */
+}
+
+header h1 {
+    font-size: 38px;
+    color: var(--white);
+    /* text-shadow: 0 0 5px #fca31199; */
+}
+
+.card {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 300px;
+    aspect-ratio: 1 / 1.5;
+    margin: 20px;
+    padding: 20px;
+
+    border: 2px solid var(--dark);
+    border-radius: 10px;
+}
+
+.card h2 {
+    color: var(--purple);
+}
+
+.card p {
+    color: var(--dim-purple);
+}
+
+.img-container {
+    border: 2px solid var(--dark);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 footer {
@@ -15,19 +80,20 @@ footer {
     bottom: 0;
 }
 
-.shadow {
-    filter: drop-shadow(0 0 10px rgba(255,255,255,.4));
-}
-
 nav {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
     left: 0;
     bottom: 10px;
 
     width: 500px;
     height: 80px;
 
-    background-color: white;
+    background-color: var(--dark);
     clip-path: path("M 420,0 A 40,40 0,0,1 460,40 L 460,40 A 40,40 0,0,0 500,80 L 0,80 L 0,0 L 460,0 Z");
 }
 
@@ -39,5 +105,26 @@ nav {
     width: 100vw;
     height: 10px;
 
-    background-color: white;
+    background-color: var(--dark);
+}
+
+a.nav-link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 5px 10px 5px 10px;
+    transform: translate(-5px, 0);
+
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    color: var(--white);
+    background-color: rgba(0,0,0,.1);
+
+    cursor: pointer;
+
+    transition: font-size 0.3s ease-in, background-color .3s ease-in;
+}
+
+a.nav-link:hover {
+    font-size: 1.6rem;
+    background-color: rgba(125,125,125,.1);
 }
