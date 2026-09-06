@@ -1,0 +1,105 @@
+@import url("colours.css");
+
+@font-face {
+    font-family: "Rubik";
+    src: url("../../assets/fonts/Rubik-VariableFont_wght.ttf") format("woff2");
+}
+
+.mobile-title {
+    display: none;
+    margin: 5px auto;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.mobile-title h2 {
+    font-size: 2rem;
+}
+
+body {
+    font-family: "Rubik";
+    background-color: var(--background);
+    margin: 0;
+}
+
+main {
+    display: flex;
+    position: relative;
+    margin: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    aspect-ratio: 19 / 10;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+
+    top: 0;
+    left: 0;
+    z-index: 105;
+    background-color: var(--background);
+}
+
+header .site-name {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    aspect-ratio: 10 / 1;
+    height: 2rem;
+    margin: 10px;
+
+    padding: 10px 5px;
+}
+
+nav a {
+    text-decoration: underline;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 100;
+
+    margin: 10px;
+    padding: 0;
+}
+
+@media (max-width: 800px) {
+    header {
+        display: flex;
+        justify-content: center;
+
+        bottom: 0;
+        top: auto;
+        
+        background-color: #EFE2CC;
+    }
+
+    .mobile-title {
+        display: block;
+    }
+
+    header .site-name {
+        display: none;
+    }
+
+    nav {
+        aspect-ratio: auto;
+    }
+
+    nav a {
+        font-size: 1.5rem;
+    }
+}

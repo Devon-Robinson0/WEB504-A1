@@ -1,0 +1,22 @@
+:root {
+    --background: #F9F0E0;
+
+    /* project different colours */
+    --orange-border: #D46D25;
+    --orange-bg: #FDC086;
+    
+    --green-border: #689D4B;
+    --green-bg: #C7D3C0;
+
+    --blue-border: #78A4CB;
+    --blue-bg: #95BDD7;
+
+    --red-border: #9E3B3B;
+    --red-bg: #EA7B7B;
+
+    --purple-border: #403D88;
+    --purple-bg: #C5B3D3;
+
+    --magenta-border: #696FC7;
+    --magenta-bg: #B5BAFF;
+}

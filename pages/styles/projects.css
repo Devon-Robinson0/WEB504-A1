@@ -1,0 +1,254 @@
+@import url("../../assets/global-css/colours.css");
+
+main {
+    display: block;
+}
+
+.projects-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    height: auto;
+    margin-top: 3rem;
+    margin-right: 10px;
+
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.projects-nav a {
+    /* display: flex; */
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+
+    line-height: 3;
+
+    /* margin-bottom: auto; */
+
+    transform-origin: right center;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.projects-nav a:hover {
+    transform: scale(1.4);
+}
+
+.projects-nav a:after {
+    content: "";
+    height: 30px;
+    width: 5px;
+    border: 3px solid black;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+.projects-nav a.hut-tracker:after {
+    border-color: var(--red-border);
+}
+.projects-nav a.study-tracker:after {
+    border-color: var(--orange-border);
+}
+.projects-nav a.calendar-project:after {
+    border-color: var(--green-border);
+}
+.projects-nav a.logical-erd:after {
+    border-color: var(--blue-border);
+}
+.projects-nav a.conceptual-erd:after {
+    border-color: var(--magenta-border);
+}
+.projects-nav a.servers:after {
+    border-color: var(--purple-border);
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    width: 80%;
+    height: 90vh;
+    box-sizing: border-box;
+
+    margin: 0 200px 70px 0;
+    padding-right: 70px;
+
+    border: 2px solid black;
+    border-radius: 30px;
+    border-left: none;
+}
+
+.project:first-child {
+    margin-top: 100px;
+}
+
+#project1 {
+    border-color: var(--red-border);
+    box-shadow: 0 0 8px 3px var(--red-bg);
+}
+#project2 {
+    border-color: var(--orange-border);
+    box-shadow: 0 0 8px 3px var(--orange-bg);
+}
+#project3 {
+    border-color: var(--green-border);
+    box-shadow: 0 0 8px 3px var(--green-bg);
+}
+#project4 {
+    border-color: var(--blue-border);
+    box-shadow: 0 0 8px 3px var(--blue-bg);
+}
+#project5 {
+    border-color: var(--magenta-border);
+    box-shadow: 0 0 8px 3px var(--magenta-bg);
+}
+#project6 {
+    border-color: var(--purple-border);
+    box-shadow: 0 0 8px 3px var(--purple-bg);
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    grid-row: span 2;
+}
+
+.project-img-holder {
+    aspect-ratio: 1 / 1;
+    width: 20vw;
+
+    border: 3px solid black;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+#project1 .project-img-holder {
+    border-color: var(--red-border);
+}
+#project2 .project-img-holder {
+    border-color: var(--orange-border);
+}
+#project3 .project-img-holder {
+    border-color: var(--green-border);
+}
+#project4 .project-img-holder {
+    border-color: var(--blue-border);
+}
+#project5 .project-img-holder {
+    border-color: var(--magenta-border);
+}
+#project6 .project-img-holder {
+    border-color: var(--purple-border);
+}
+
+.project-img-holder img {
+    height: 100%;
+}
+
+.project-description {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-learnt {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-learnt ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+
+    margin: 20px 0;
+}
+
+.skills-learnt li {
+    display: flex;
+    border: 2px solid black;
+    border-radius: 15px;
+    color: black;
+
+    padding: 5px 10px;
+    height: 1.5rem;
+    margin-right: auto;
+    align-items: center;
+}
+
+#project1 .skills-learnt li {
+    border: 2px solid var(--red-border);
+    background-color: var(--red-bg);
+}
+#project2 .skills-learnt li {
+    border: 2px solid var(--orange-border);
+    background-color: var(--orange-bg);
+}
+#project3 .skills-learnt li {
+    border: 2px solid var(--green-border);
+    background-color: var(--green-bg);
+}
+#project4 .skills-learnt li {
+    border: 2px solid var(--blue-border);
+    background-color: var(--blue-bg);
+}
+#project5 .skills-learnt li {
+    border: 2px solid var(--magenta-border);
+    background-color: var(--magenta-bg);
+}
+#project6 .skills-learnt li {
+    border: 2px solid var(--purple-border);
+    background-color: var(--purple-bg);
+}
+
+.project-title {
+    align-self: center;
+    justify-self: center;
+}
+
+@media (max-width: 800px) {
+    .projects-nav {
+        display: none;
+    }
+
+    .project {
+        margin: 0 20px 50px 20px;
+        border-bottom: none;
+        padding: 10px 0 0 0;
+        width: calc(100% - 40px);
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project .project-img-holder:not(:first-child) {
+        display: none;
+    }
+
+    .project-description {
+        display: flex;
+        flex-direction: column;
+
+        margin: 0 10px;
+    }
+
+    .skills-learnt {
+        margin: 0 10px;
+    }
+
+    .project:first-child {
+        margin-top: 50px;
+    }
+}
