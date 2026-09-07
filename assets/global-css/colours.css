@@ -1,5 +1,6 @@
 :root {
     --background: #F9F0E0;
+    --dark-bg: #E8D5BA;
 
     /* project different colours */
     --orange-border: #D46D25;
@@ -19,4 +20,9 @@
 
     --magenta-border: #696FC7;
     --magenta-bg: #B5BAFF;
+
+    /* Skill card colours */
+    --skill-card-border: #65452F;
+    --skill-card-bg: #D8C9B5;
+    --skill: #F3EEE5;
 }
