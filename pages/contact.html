@@ -3,18 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/global.css" />
+    <title>Devon's Contacts</title>
+    <link rel="stylesheet" href="../assets/global-css/global.css" />
+    <link rel="stylesheet" href="styles/contact.css" />
 </head>
-<body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="skills.html">Skills</a>
-        <a href="contact.html">Contact me</a>
-    </nav>
+<body id="body-temp">
+    <header>
+        <nav>
+            <a id="home-nav-link" href="index.html">Home</a>
+            <a id="projects-nav-link" href="projects.html">Projects</a>
+            <a id="skills-nav-link" href="skills.html">Skills</a>
+            <a id="contact-nav-link" href="contact.html">Contact</a>
+        </nav>
+        <a href="index.html" class="site-name"><h2>Devon's Portfolio</h2></a>
+    </header>
     <main>
-        
+        <div class="start-conversation">
+            <h1>Let's start a conversation</h1>
+            <h2>Other Socials:</h2>
+            <a href="https://github.com/Devon-Robinson0" target="_blank">
+                <h3>Linkedin</h3>
+                <p>@devon-robinson-6292603ba</p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/devon-robinson-6292603ba/" target="_blank">
+                <h3>GitHub</h3>
+                <p>@Devon-Robinson0</p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/></svg>
+            </a>
+            <a href="mailto:devonpr@gmail.com">
+                <h3>Email</h3>
+                <p>DevonPR23@gmail.com</p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z"/></svg>
+            </a>
+        </div>
+        <div class="contact">
+            <form>
+                <div class="input-container">
+                    <label for="name-input">YOUR NAME</label>
+                    <input id="name-input" type="text" placeholder="e.g. john doe" />
+                </div>
+                <div class="input-container">
+                    <label for="email-input">YOUR EMAIL</label>
+                    <input id="email-input" type="email" placeholder="e.g. johndoe@gmail.com" />
+                </div>
+                <div class="input-container">
+                    <label for="subject-input">SUBJECT</label>
+                    <input id="subject-input" type="text" placeholder="e.g. website design partnership" />
+                </div>
+                <div class="input-container">
+                    <label for="message-input">MESSAGE</label>
+                    <textarea 
+                        id="message-input" 
+                        placeholder="Describe your reason for contact, what this is about.. etc" 
+                        rows="8"
+                    ></textarea>
+                </div>
+                
+                <button type="button" id="submit-form-btn">Send Enquiry</button>
+            </form>
+        </div>
     </main>
+    <footer id="contact-footer">
+        <p>&copy; 2026 Devon Robinson</p>
+    </footer>
 </body>
 </html>

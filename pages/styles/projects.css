@@ -258,7 +258,7 @@ main {
     }
 
     .project {
-        margin: 0 20px 50px 20px;
+        margin: 0 20px 25px 20px;
         border-left: 2px solid black;
         border-radius: 15px;
         padding: 10px 0 15px 0;
@@ -351,5 +351,9 @@ main {
 
         margin-top: 0rem;
         line-height: 2rem;
+    }
+
+    .main-title {
+        margin-top: 0;
     }
 }
