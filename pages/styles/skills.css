@@ -102,7 +102,7 @@ hr {
     main .skill-card-container {
         margin: 0 auto;
     }
-
+    
     .my-skills-mobile {
         display: block;
         margin-top: 0;
@@ -123,5 +123,16 @@ hr {
 
     .skill-card {
         padding: 10px;
+    }
+
+    .skill-card div {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .skill-card span {
+        flex-direction: row;
+        text-align: center;
+        flex-grow: 1;
     }
 }
