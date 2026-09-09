@@ -235,7 +235,7 @@ section:not(:first-child) {
     }
 
     .description {
-        margin: 0 50px;
+        margin: 0 1rem;
     }
 
     .description h2 {
