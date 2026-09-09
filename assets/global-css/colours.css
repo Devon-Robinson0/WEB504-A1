@@ -2,6 +2,7 @@
     --background: #F9F0E0;
     --dark-bg: #E8D5BA;
     --form-bg: #FFF9EF;
+    --hover-cream: #DFC9AC;
 
     /* project different colours */
     --orange-border: #D46D25;
@@ -21,6 +22,9 @@
 
     --magenta-border: #696FC7;
     --magenta-bg: #B5BAFF;
+
+    --gold-border: #E9C46A;
+    --gold-bg: #FFF3C7;
 
     /* Skill card colours */
     --skill-card-border: #65452F;

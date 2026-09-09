@@ -92,7 +92,7 @@ hr {
 @media (max-width: 800px) {
     main {
         margin-top: 0;
-        margin-bottom: 100px;
+        margin-bottom: calc(30vh + 35px);
     }
 
     main .my-skills {

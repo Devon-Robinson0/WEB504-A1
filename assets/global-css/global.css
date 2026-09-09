@@ -139,7 +139,7 @@ footer a {
 }
 
 .socials a:hover {
-    background-color: #DFC9AC;
+    background-color: var(--hover-cream);
 }
 
 .socials svg {

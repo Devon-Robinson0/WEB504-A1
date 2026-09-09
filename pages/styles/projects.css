@@ -9,6 +9,10 @@ main {
     padding-bottom: 2rem;
 }
 
+.main-title {
+    margin-top: 4rem;
+}
+
 .projects-nav {
     display: flex;
     flex-direction: column;
@@ -71,6 +75,9 @@ main {
 .projects-nav a.servers:after {
     border-color: var(--purple-border);
 }
+.projects-nav a.free-code-camp:after {
+    border-color: var(--gold-border);
+}
 
 .project {
     position: relative;
@@ -120,6 +127,9 @@ main {
     border-color: var(--purple-border);
     box-shadow: 0 0 8px 3px var(--purple-bg);
 }
+#project7 {
+    border-color: var(--gold-border);
+}
 
 .img-container {
     display: flex;
@@ -156,6 +166,9 @@ main {
 }
 #project6 .project-img-holder {
     border-color: var(--purple-border);
+}
+#project7 .project-img-holder {
+    border-color: var(--gold-border);
 }
 
 .project-img-holder img {
@@ -221,6 +234,10 @@ main {
     border: 2px solid var(--purple-border);
     background-color: var(--purple-bg);
 }
+#project7 .skills-learnt li {
+    border: 2px solid var(--gold-border);
+    background-color: var(--gold-bg);
+}
 
 .project-title {
     align-self: center;
@@ -229,10 +246,35 @@ main {
 
 .project-name {
     position: absolute;
+    display: flex;
+    align-items: center;
     top: 10px;
     right: 70px;
     font-size: 2rem;
 }
+
+.github-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+
+    width: 42px; 
+    height: 42px; 
+
+    margin-left: 1rem;
+}
+
+.github-link:hover {
+    background-color: var(--dark-bg);
+}
+
 
 #projects-nav-link {
     position: relative;
@@ -345,11 +387,13 @@ main {
 
     .project-name {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
         top: auto;
         right: auto;
         text-align: center;
-
-        margin-top: 0rem;
+        margin: 0 18px 0 18px;
         line-height: 2rem;
     }
 
