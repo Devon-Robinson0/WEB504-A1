@@ -207,6 +207,7 @@ textarea {
         margin-top: 0;
         padding-top: 10px;
         text-align: center;
+        width: 100%;
     }
 
     .contact form {
