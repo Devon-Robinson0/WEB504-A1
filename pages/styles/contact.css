@@ -25,7 +25,8 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    margin: 0;
+    margin-top: 6rem;
+    margin-bottom: 0;
 }
 
 .start-conversation {
@@ -162,24 +163,43 @@ textarea {
 }
 
 @media (max-width: 800px) {
+    body {
+        height: 100%;
+    }
+
     main {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: auto auto;
+        row-gap: 0;
+
+        height: 100%;
+        width: 100vw;
+
+        margin: 0;
+        padding: 0 20px;
     }
 
     .start-conversation {
         margin: 0;
-        padding: 5px;
+        width: calc(100% - 40px);
     }
 
     .start-conversation h1 {
-        font-size: 52px;
+        font-size: 48px;
         margin-top: 0;
         text-align: center;
     }
 
     .contact form {
-        margin: 3rem 0 5rem 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    .contact {
+        position: relative;
+        width: calc(100% - 40px);
+        margin-top: 20px;
+        margin-bottom: 5rem;
     }
 
     #contact-footer {

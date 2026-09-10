@@ -10,7 +10,7 @@ main {
 }
 
 .main-title {
-    margin-top: 4rem;
+    margin: 6rem 0 2rem 0;
 }
 
 .projects-nav {
@@ -30,106 +30,94 @@ main {
 }
 
 .projects-nav a {
-    /* display: flex; */
     cursor: pointer;
     text-decoration: none;
     color: inherit;
 
     line-height: 3;
 
-    /* margin-bottom: auto; */
-
     transform-origin: right center;
     transition: transform 0.2s ease-in-out;
-
 }
 
 .projects-nav a:hover {
     transform: scale(1.4);
 }
 
-.projects-nav a:after {
+.projects-nav a::after {
     content: "";
     height: 30px;
     width: 5px;
-    border: 3px solid black;
+    border: 3px solid var(--magenta-border);
     border-radius: 3px;
     margin-left: 10px;
 }
 
-.projects-nav a.hut-tracker:after {
-    border-color: var(--red-border);
-}
-.projects-nav a.study-tracker:after {
-    border-color: var(--orange-border);
-}
-.projects-nav a.calendar-project:after {
-    border-color: var(--green-border);
-}
-.projects-nav a.logical-erd:after {
-    border-color: var(--blue-border);
-}
-.projects-nav a.conceptual-erd:after {
-    border-color: var(--magenta-border);
-}
-.projects-nav a.servers:after {
-    border-color: var(--purple-border);
-}
-.projects-nav a.free-code-camp:after {
-    border-color: var(--gold-border);
+.projects-nav a:hover::after {
+    border-color: var(--magenta-bg);
 }
 
-.project {
+.project { 
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    height: clamp(600px, 60vh, 1200px);
+
+    margin: 0 200px 70px 0;
+
+    box-shadow: 0 0 5px 5px var(--magenta-bg);
+    border: 2px solid var(--magenta-border);
+    border-radius: 0 30px 30px 0;
+    border-left: none;
+
+    overflow: hidden;
+
+    scroll-margin-top: 150px;
+}
+
+.project-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: flex-start;
+
+    font-size: 2rem;
+    padding: 15px;
+
+    border: none;
+    border-top: none;
+
+    width: calc(100% - 30px);
+    margin: 0;
+
+    background-color: var(--dark-bg);
+}
+
+.project-name span {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-right: 2rem;
+}
+
+.project-content-container {
     position: relative;
     display: grid;
     grid-template-columns: 2fr 3fr;
     grid-template-rows: 1fr 1fr;
-    width: 80%;
-    height: 90vh;
+
     box-sizing: border-box;
+    width: 100%;
+    height: 100%;
 
-    margin: 0 200px 70px 0;
-    padding-right: 70px;
-    padding-bottom: 15px;
-
-    border: 2px solid black;
-    border-radius: 0 30px 30px 0;
-    border-left: none;
-
-    scroll-margin-top: 80px;
-}
-
-.project:first-child {
-    margin-top: 100px;
-}
-
-#project1 {
-    border-color: var(--red-border);
-    box-shadow: 0 0 8px 3px var(--red-bg);
-}
-#project2 {
-    border-color: var(--orange-border);
-    box-shadow: 0 0 8px 3px var(--orange-bg);
-}
-#project3 {
-    border-color: var(--green-border);
-    box-shadow: 0 0 8px 3px var(--green-bg);
-}
-#project4 {
-    border-color: var(--blue-border);
-    box-shadow: 0 0 8px 3px var(--blue-bg);
-}
-#project5 {
-    border-color: var(--magenta-border);
-    box-shadow: 0 0 8px 3px var(--magenta-bg);
-}
-#project6 {
-    border-color: var(--purple-border);
-    box-shadow: 0 0 8px 3px var(--purple-bg);
-}
-#project7 {
-    box-shadow: 0 0 8px 3px var(--gold-bg);
-    border-color: var(--gold-border);
+    padding: 0 4rem 0 0;
 }
 
 .img-container {
@@ -143,33 +131,11 @@ main {
 
 .project-img-holder {
     aspect-ratio: 1 / 1;
-    width: 20vw;
+    width: 15vw;
 
-    border: 3px solid black;
+    border: 3px solid var(--magenta-border);
     border-radius: 30px;
     overflow: hidden;
-}
-
-#project1 .project-img-holder {
-    border-color: var(--red-border);
-}
-#project2 .project-img-holder {
-    border-color: var(--orange-border);
-}
-#project3 .project-img-holder {
-    border-color: var(--green-border);
-}
-#project4 .project-img-holder {
-    border-color: var(--blue-border);
-}
-#project5 .project-img-holder {
-    border-color: var(--magenta-border);
-}
-#project6 .project-img-holder {
-    border-color: var(--purple-border);
-}
-#project7 .project-img-holder {
-    border-color: var(--gold-border);
 }
 
 .project-img-holder img {
@@ -177,84 +143,56 @@ main {
 }
 
 .project-description {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .skills-learnt {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.skills-learnt hr {
+    height: 2px;
+    width: 100%;
+    background-color: black; 
+    border: none;
 }
 
 .skills-learnt ul {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0;
 
-    margin: 20px 0;
+    align-items: flex-start;
+
+    width: 100%;
 }
 
 .skills-learnt li {
     display: flex;
-    width: 100%;
     justify-content: center;
-    border: 2px solid black;
+    flex-grow: 1;
+
+    border: 2px solid var(--magenta-border);
     border-radius: 15px;
+    background-color: var(--magenta-bg);
     color: black;
 
     padding: 5px 10px;
     height: 1.5rem;
-    margin-right: auto;
     align-items: center;
-}
-
-#project1 .skills-learnt li {
-    border: 2px solid var(--red-border);
-    background-color: var(--red-bg);
-}
-#project2 .skills-learnt li {
-    border: 2px solid var(--orange-border);
-    background-color: var(--orange-bg);
-}
-#project3 .skills-learnt li {
-    border: 2px solid var(--green-border);
-    background-color: var(--green-bg);
-}
-#project4 .skills-learnt li {
-    border: 2px solid var(--blue-border);
-    background-color: var(--blue-bg);
-}
-#project5 .skills-learnt li {
-    border: 2px solid var(--magenta-border);
-    background-color: var(--magenta-bg);
-}
-#project6 .skills-learnt li {
-    border: 2px solid var(--purple-border);
-    background-color: var(--purple-bg);
-}
-#project7 .skills-learnt li {
-    border: 2px solid var(--gold-border);
-    background-color: var(--gold-bg);
 }
 
 .project-title {
     align-self: center;
     justify-self: center;
-}
-
-.project-name {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    top: 10px;
-    right: 70px;
-    font-size: 2rem;
 }
 
 .github-link {
@@ -271,12 +209,10 @@ main {
 
     width: 42px; 
     height: 42px; 
-
-    margin-left: 1rem;
 }
 
 .github-link:hover {
-    background-color: var(--dark-bg);
+    background-color: var(--background);
 }
 
 
@@ -304,34 +240,24 @@ main {
     }
 
     .project {
-        margin: 0 20px 25px 20px;
-        border-left: 2px solid black;
-        border-radius: 15px;
-        padding: 10px 0 15px 0;
-        width: calc(100% - 40px);
         height: auto;
-        
+        width: calc(100% - 40px);
+        border-radius: 15px;
+        border-left: 2px solid var(--magenta-border);
+
+        margin: 2rem auto;
+    }
+/* 
+    .project-name span {
+        display: none;
+    } */
+
+    .project-content-container {
         display: flex;
         flex-direction: column;
-    }
 
-    #project1 {
-        box-shadow: none;
-    }
-     #project2 {
-        box-shadow: none;
-    }
-     #project3 {
-        box-shadow: none;
-    }
-     #project4 {
-        box-shadow: none;
-    }
-     #project5 {
-        box-shadow: none;
-    }
-     #project6 {
-        box-shadow: none;
+        margin: 0 20px 25px 20px;
+        padding: 10px 0 15px 0;
     }
 
     .project-img-holder {
@@ -340,7 +266,7 @@ main {
         border-radius: 15px;
     }
 
-    .project .project-img-holder:not(:first-child) {
+    .project-content-container .project-img-holder:not(:first-child) {
         display: none;
     }
 
@@ -379,12 +305,6 @@ main {
         margin: 0;
     }
 
-    .project:first-child {
-        margin-top: 50px;
-    }
-
-    
-
     body {
         padding-bottom: 100px;
     }
@@ -397,12 +317,21 @@ main {
         position: relative;
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         justify-content: space-around;
         top: auto;
         right: auto;
         text-align: center;
-        margin: 0 18px 0 18px;
         line-height: 2rem;
+    }
+
+    .project-name span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: .5rem 0 0;
+        padding: 0;
     }
 
     .main-title {

@@ -4,6 +4,19 @@
 main {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    margin: 100px 0 300px 0;
+}
+
+.main-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+
+    height: clamp(500px, 40vh, 4000px);
+    width: 100%;
 }
 
 .intro-img-container img {
@@ -28,74 +41,69 @@ section {
     justify-content: center;
 
     width: 100%;
-
     height: 100%;
 }
 
 section:not(:first-child) {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    
-    height: 450px;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    height: 50vh;
+    padding-bottom: 50px;
+    background-color: var(--background);
 }
 
 #img1 {
     top: 13%;
     left: 28%;
     transform: translateX(-50%);
-    width: clamp(50px, 18vw, 300px);
+    width: 180px;
 }
 
 #img2 {
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    width: clamp(50px, 18vw, 300px);
+    width: 180px;
 }
 
 #img3 {
     top: 13%;
     left: 71%;
     transform: translateX(-50%);
-    width: clamp(50px, 18vw, 300px);
+    width: 180px;
 }
 
 #img5 {
     bottom: 12%;
     left: 71%;
     transform: translateX(-50%);
-    width: clamp(50px, 18vw, 300px);
+    width: 180px;
 }
 
 #img6 {
     bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
-    width: clamp(50px, 15vw, 300px);
+    width: 180px;
 }
 
 #img7 {
     bottom: 12%;
     left: 29%;
     transform: translateX(-50%);
-    width: clamp(50px, 18vw, 300px);
+    width: 180px;
 }
 
 #intro-container {
-    position: sticky;
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-self: center;
 
-    top: clamp(30px, 18vw, 300px);
+    margin: 0 auto;
 
-    width: 100vw;
-    height: clamp(100px, 17vw, 300px);
 
     z-index: 101;
-    background-color: var(--background);
 }
 
 #intro-container p {
