@@ -100,7 +100,7 @@ main {
     justify-self: center;
     align-self: center;
 
-    border: 2px solid var(--dark-bg);
+    border: 3px solid var(--skill-card-border);
     border-radius: 15px;
     overflow: hidden;
 }
@@ -161,6 +161,8 @@ main {
         top: 0;
         width: auto;
         height: auto;
+        padding: 0;
+        text-align: center;
     }
 
     #intro-container p {
@@ -213,10 +215,16 @@ main {
         display: inline-block;
 
         text-decoration: none;
-        color: inherit;
+        color: var(--skill-card-border);
+        font-weight: 400;
 
-        border: 2px solid black;
-        background-color: var(--dark-bg);
+        width: 30vw;
+        align-self: center;
+        text-align: center;
+
+        border: 3px solid var(--skill-card-border);
+        border-radius: 1px;
+        background-color: var(--skill-card-bg);
         padding: 10px;
 
         margin: 3rem 0 1rem 0;

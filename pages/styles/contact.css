@@ -25,22 +25,30 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    margin-top: 6rem;
-    margin-bottom: 0;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .start-conversation {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-around;
 
     margin-left: 2rem;
+    height: 100%;
     min-width: 0;
 }
 
 .start-conversation h1 {
-    font-size: 68px;
+    font-size: 72px;
     font-weight: 600;
+    width: 80%;
+    margin: 0;
 }
 
 .start-conversation h2 {
@@ -52,6 +60,7 @@ main {
     box-sizing: border-box;
     border-bottom: 1px solid black;
     width: 100%;
+    height: 8vh;
 }
 
 .start-conversation a:hover {
@@ -80,6 +89,13 @@ main {
     color: inherit;
 }
 
+.socials-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
 /* Contact form */
 
 .contact {
@@ -87,6 +103,7 @@ main {
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 100%;
 }
 
 .contact form {
@@ -101,8 +118,8 @@ main {
     background-color: var(--form-bg);
     box-shadow: 0 0 5px 3px rgba(0,0,0,0.1);
 
+    height: calc(100% - 150px);
     width: 100%;
-    height: 70vh;
 }
 
 .contact form label {
@@ -194,6 +211,7 @@ textarea {
 
     .contact form {
         width: 100%;
+        height: 60vh;
         margin: 0;
     }
 
