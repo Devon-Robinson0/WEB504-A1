@@ -100,13 +100,18 @@ hr {
     }
 
     main .skill-card-container {
-        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 1rem;
     }
-    
+
     .my-skills-mobile {
         display: block;
         margin-top: 0;
         font-size: 42px;
+        padding-top: 10px;
+        font-weight: 700;
     }
 
     #skills-nav::after {
@@ -123,6 +128,10 @@ hr {
 
     .skill-card {
         padding: 10px;
+        width: calc(100% - 2rem);
+        align-self: center;
+
+        margin: .5rem 0;
     }
 
     .skill-card div {

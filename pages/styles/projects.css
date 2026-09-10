@@ -247,10 +247,6 @@ main {
 
         margin: 2rem auto;
     }
-/* 
-    .project-name span {
-        display: none;
-    } */
 
     .project-content-container {
         display: flex;
@@ -309,6 +305,11 @@ main {
         padding-bottom: 100px;
     }
 
+    main {
+        margin-bottom: 24vh;
+        padding-bottom: 10px;
+    }
+
     .project-description h2 {
         display: none;
     }
@@ -335,6 +336,12 @@ main {
     }
 
     .main-title {
-        margin-top: 0;
+        margin-top: 10px;
+        font-size: 42px;
+        font-weight: 700;
+    }
+
+    .project:last-of-type {
+        margin-bottom: 0;
     }
 }

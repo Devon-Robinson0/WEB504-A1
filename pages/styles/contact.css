@@ -176,17 +176,19 @@ textarea {
         width: 100vw;
 
         margin: 0;
-        padding: 0 20px;
+        padding: 0;
     }
 
     .start-conversation {
-        margin: 0;
+        margin: 0 auto;
         width: calc(100% - 40px);
     }
 
     .start-conversation h1 {
-        font-size: 48px;
+        font-size: 42px;
+        font-weight: 700;
         margin-top: 0;
+        padding-top: 10px;
         text-align: center;
     }
 
@@ -198,8 +200,8 @@ textarea {
     .contact {
         position: relative;
         width: calc(100% - 40px);
-        margin-top: 20px;
-        margin-bottom: 5rem;
+
+        margin: 20px auto 5rem auto;
     }
 
     #contact-footer {
