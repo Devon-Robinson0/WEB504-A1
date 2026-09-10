@@ -136,20 +136,20 @@ input {
     line-height: 2.5rem;
     padding-left: 1rem;
     border-radius: 5px;
-    border: 1px solid #DCD7CF;
+    border: 1px solid var(--input-bg);
 }
 
 textarea {
     padding: 1rem 1rem;
     resize: none;
     border-radius: 5px;
-    border: 1px solid #DCD7CF;
+    border: 1px solid var(--input-bg);
 }
 
 #submit-form-btn {
     height: 3.5rem;
 
-    background-color: #FF7E7E;
+    background-color: var(--magenta-border);
     border: none;
     border-radius: 5px;
 
@@ -159,7 +159,7 @@ textarea {
 }
 
 #submit-form-btn:hover {
-    background-color: #FF9292;
+    background-color: var(--magenta-bg);
 }
 
 /* Footer */

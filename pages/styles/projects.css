@@ -131,7 +131,7 @@ main {
 
 .project-img-holder {
     aspect-ratio: 1 / 1;
-    width: 15vw;
+    width: 14vw;
 
     border: 3px solid var(--magenta-border);
     border-radius: 30px;
