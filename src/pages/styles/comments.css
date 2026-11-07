@@ -1,0 +1,40 @@
+@import url("../global-css/colours.css");
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.comment-box {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #111;
+    border-radius: 15px;
+    background-color: #FFF;
+
+    padding: 20px;
+
+    width: clamp(200px, 60vw, 1000px);
+}
+.comment-box h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.comment-box .chat-box-heading {
+    border-bottom: 1px solid #111;
+}
+.comment-box #chat-box {
+    display: flex;
+    flex-direction: column;
+
+    height: clamp(300px, 30vh, 500px);
+
+    margin: 10px 0 10px 0;
+}
+.comment-box .comment-section {
+    border-top: 1px solid #111;
+    padding-top: 15px;
+}
