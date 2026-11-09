@@ -190,12 +190,7 @@ main {
   color: var(--text-muted);
   font-size: 12px;
 }
-.comment-box #chat-box .message:focus-within .edit-btn,
-.comment-box #chat-box .message:focus-within .del-btn {
-  visibility: visible;
-}
 .comment-box #chat-box .message .edit-btn {
-  visibility: hidden;
   position: absolute;
   top: 10px;
   right: 55px;
@@ -215,7 +210,6 @@ main {
   display: none;
 }
 .comment-box #chat-box .message .del-btn {
-  visibility: hidden;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -252,18 +246,12 @@ main {
 .comment-box #chat-box .message button svg {
   filter: drop-shadow(0 2px 4px rgb(0 0 0 / 30%));
 }
-.comment-box #chat-box .message:hover .edit-btn {
-  visibility: visible;
-}
-.comment-box #chat-box .message:hover .del-btn {
-  visibility: visible;
-}
 .comment-box #chat-box .message .save-btn {
-  grid-column: 5;
+  grid-column: 4;
   grid-row: 2;
 
   height: 41px;
-  margin-left: -10px;
+  margin-left: -5px;
 
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -400,6 +388,30 @@ textarea {
 .notification button {
   background-color: inherit;
   color: var(--input-border);
+}
+
+.comment-box #chat-box .message .edit-btn,
+.comment-box #chat-box .message .del-btn {
+  visibility: hidden;
+}
+
+@media (hover: hover) {
+  .comment-box #chat-box .message:hover .edit-btn,
+  .comment-box #chat-box .message:hover .del-btn {
+    visibility: visible;
+  }
+
+  .comment-box #chat-box .message:focus-within .edit-btn,
+  .comment-box #chat-box .message:focus-within .del-btn {
+    visibility: visible;
+  }
+}
+
+@media (hover: none) {
+  .comment-box #chat-box .message.actions-open .edit-btn,
+  .comment-box #chat-box .message.actions-open .del-btn {
+    visibility: visible;
+  }
 }
 
 @media (max-width: 800px) {

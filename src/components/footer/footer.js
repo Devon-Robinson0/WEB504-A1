@@ -37,6 +37,7 @@ export function Footer() {
             <a href="/src/pages/projects.html">Projects</a>
             <a href="/src/pages/skills.html">Skills</a>
             <a href="/src/pages/contact.html">Contact Me</a>
+            <a href="/src/pages/comments.html">Comments</a>
         </div>
 
         <p>&copy; ${new Date().getFullYear()} Devon Robinson</p>

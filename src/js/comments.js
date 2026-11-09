@@ -232,6 +232,28 @@ function createMain() {
 }
 createMain();
 
+const touchControls = window.matchMedia('(hover: none)');
+
+document.addEventListener('click', (event) => {
+  if (!touchControls.matches) return;
+
+  const message = event.target.closest('#chat-box .message.my-message');
+
+  if (message && event.target.closest('button, textarea, input')) {
+    return;
+  }
+
+  const wasOpen = message?.classList.contains('actions-open');
+
+  chatBox.querySelectorAll('.actions-open').forEach((element) => {
+    element.classList.remove('actions-open');
+  });
+
+  if (message && !wasOpen) {
+    message.classList.add('actions-open');
+  }
+});
+
 function listenForOnlineUsers() {
   return onValue(
     ref(db, 'presence'),
