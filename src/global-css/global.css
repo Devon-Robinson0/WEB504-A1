@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "Rubik";
-    src: url("../../assets/fonts/Rubik-VariableFont_wght.ttf") format("woff2");
+    src: url("../fonts/Rubik-VariableFont_wght.ttf") format("woff2");
 }
 
 .main-title {
@@ -16,6 +16,10 @@ body {
     font-family: "Rubik";
     background-color: var(--background);
     margin: 0;
+}
+input,
+textarea {
+    font-family: "Rubik";
 }
 
 main {

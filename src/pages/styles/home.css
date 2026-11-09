@@ -1,5 +1,5 @@
 /* Home page */
-@import url("src/global-css/colours.css");
+@import url("../../global-css/colours.css");
 
 main {
     display: flex;

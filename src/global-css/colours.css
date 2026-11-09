@@ -15,4 +15,13 @@
 
     /* Contact */
     --input-bg: #DCD7CF;
+
+    --text-muted: #64748b;
+    --message-highlight: #e0f2f1;
+
+    --comment-btn: #0f766e;
+    --comment-btn-hover: #115e59;
+    --comment-del-btn: #b91c1c;
+    --comment-del-btn-hover: #991b1b;
+    --input-border: #94a3b8;
 }
