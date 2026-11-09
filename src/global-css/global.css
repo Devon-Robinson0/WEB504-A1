@@ -1,282 +1,294 @@
-@import url("colours.css");
+@import url('colours.css');
 
 @font-face {
-    font-family: "Rubik";
-    src: url("../fonts/Rubik-VariableFont_wght.ttf") format("woff2");
+  font-family: 'Rubik';
+  src: url('../fonts/Rubik-VariableFont_wght.ttf') format('woff2');
 }
 
 .main-title {
-    margin: 100px;
-    text-align: center;
-    font-size: 3rem;
+  margin: 100px;
+  text-align: center;
+  font-size: 3rem;
 }
 
 body {
-    position: relative;
-    font-family: "Rubik";
-    background-color: var(--background);
-    margin: 0;
+  position: relative;
+  font-family: 'Rubik';
+  background-color: var(--background);
+  margin: 0;
 }
 input,
 textarea {
-    font-family: "Rubik";
+  font-family: 'Rubik';
 }
 
 main {
-    display: flex;
-    position: relative;
-    margin: 0;
-    margin-bottom: 30vh;
+  display: flex;
+  position: relative;
+  margin: 0;
+  margin-bottom: 30vh;
 
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    background-color: var(--background);
+  background-color: var(--background);
 
-    z-index: 51;
+  z-index: 51;
 }
 
 header {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    width: 100vw;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
 
-    border-bottom: 2px solid var(--dark-bg);
+  border-bottom: 2px solid var(--dark-bg);
 
-    top: 0;
-    left: 0;
-    z-index: 105;
-    background-color: var(--background);
+  top: 0;
+  left: 0;
+  z-index: 105;
+  background-color: var(--background);
 }
-
 header .site-name h2 {
-    display: inline-block;
-    margin-right: 20px;
+  display: inline-block;
+  margin-right: 20px;
 }
-
 header .site-name {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
-
 
 nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-    aspect-ratio: 10 / 1;
-    height: 2rem;
-    margin: 10px;
+  aspect-ratio: 10 / 1;
+  height: 2rem;
+  margin: 10px;
 
-    padding: 10px 5px;
+  padding: 10px 5px;
 }
 
 nav a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 1rem;
-    font-weight: 350;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 350;
 
-    margin: 10px;
-    padding: 0;
+  margin: 10px;
+  padding: 0;
 
-    transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
 }
 
 nav a:hover {
-    transform: translateY(-10%);
+  transform: translateY(-10%);
 }
 
 footer {
-    position: fixed;
-    display: flex;
+  position: fixed;
+  display: flex;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    bottom: 0; 
-    flex-direction: column;
+  bottom: 0;
+  flex-direction: column;
 
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 
-    border-top: 2px solid black;
-    background-color: var(--dark-bg);
+  border-top: 2px solid black;
+  background-color: var(--dark-bg);
 
-    height: 30vh;
-    width: 100%;
+  height: 30vh;
+  width: 100%;
 
-    z-index: 50;
+  z-index: 50;
 }
 
 footer a {
-    color: black;
+  color: black;
 }
 
 .socials {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 
-    gap: 10px;
+  gap: 10px;
 
-    top: 1rem;
-    right: 2rem;
+  top: 1rem;
+  right: 2rem;
 }
 
 .socials a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .socials a:hover {
-    background-color: var(--hover-cream);
+  background-color: var(--hover-cream);
 }
 
 .socials svg {
-    width: 100%;
-
+  width: 100%;
 }
 
 #home-nav-link-mobile {
-    display: none;
+  display: none;
 }
 
 #projects-nav-link-mobile {
-    display: none;
+  display: none;
 }
 
 #skills-nav-link-mobile {
-    display: none;
+  display: none;
 }
 
 #contact-nav-link-mobile {
-    display: none;
+  display: none;
 }
 
 #comments-nav-link-mobile {
-    display: none;
+  display: none;
+}
+header a {
+  position: relative;
+}
+header a.active::after {
+  content: '';
+  background-color: black;
+  width: 3rem;
+  height: 2px;
+
+  border-radius: 2px;
+
+  position: absolute;
+  top: 115%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (max-width: 800px) {
-    #home-nav-link {
-        display: none;
-    }
+  #home-nav-link {
+    display: none;
+  }
 
-    #home-nav-link-mobile {
-        display: inline-block;
-    }
+  #home-nav-link-mobile {
+    display: inline-block;
+  }
 
-    #projects-nav-link {
-        display: none;
-    }
+  #projects-nav-link {
+    display: none;
+  }
 
-    #projects-nav-link-mobile {
-        display: inline-block;
-    }
+  #projects-nav-link-mobile {
+    display: inline-block;
+  }
 
-    #skills-nav-link {
-        display: none;
-    }
+  #skills-nav-link {
+    display: none;
+  }
 
-    #skills-nav-link-mobile {
-        display: inline-block;
-    }
+  #skills-nav-link-mobile {
+    display: inline-block;
+  }
 
-    #contact-nav-link {
-        display: none;
-    }
+  #contact-nav-link {
+    display: none;
+  }
 
-    #contact-nav-link-mobile {
-        display: inline-block;
-    }
+  #contact-nav-link-mobile {
+    display: inline-block;
+  }
 
-    #comments-nav-link {
-        display: none
-    }
-    #comments-nav-link-mobile {
-        display: inline-block;
-    }
+  #comments-nav-link {
+    display: none;
+  }
+  #comments-nav-link-mobile {
+    display: inline-block;
+  }
 
-    header {
-        position: fixed;
-        display: flex;
-        justify-content: center;
+  header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
 
-        bottom: 0;
-        top: auto;
-        
-        background-color: var(--dark-bg);
-    }
+    bottom: 0;
+    top: auto;
 
-    header .site-name {
-        display: none;
-    }
+    background-color: var(--dark-bg);
+  }
 
-    nav {
-        aspect-ratio: auto;
-    }
+  header .site-name {
+    display: none;
+  }
 
-    header nav a {
-        text-decoration: none;
-        position: relative;
-    }
+  nav {
+    aspect-ratio: auto;
+  }
 
-    header nav {
-        width: 100%;
-        height: 1rem;
-    }
+  header nav a {
+    text-decoration: none;
+    position: relative;
+  }
 
-    header nav svg {
-        position: relative;
-        width: 24px;
-        height: 24px;
-        margin: 0;
-    }
+  header nav {
+    width: 100%;
+    height: 1rem;
+  }
 
-    header nav a.active::before{
-        content: "";
-        width: 35px; 
-        height: 35px; 
+  header nav svg {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+  }
 
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -55%);
-        background-color: rgba(122,122,122,0.2);
-        border-radius: 50%;
-    }
+  header nav a.active::before {
+    content: '';
+    width: 35px;
+    height: 35px;
 
-    nav a {
-        font-size: 1.5rem;
-    }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    background-color: rgba(122, 122, 122, 0.2);
+    border-radius: 50%;
+  }
 
-    .main-title {
-        margin: 50px;
-        text-align: center;
-        font-size: 3rem;
-    }
+  nav a {
+    font-size: 1.5rem;
+  }
 
-    footer {
-        margin-bottom: 2rem;
-    }
+  .main-title {
+    margin: 50px;
+    text-align: center;
+    font-size: 3rem;
+  }
 
-    main {
-        margin-bottom: calc(30vh + 2rem);
-    }
+  footer {
+    margin-bottom: 2rem;
+  }
+
+  main {
+    margin-bottom: calc(30vh + 2rem);
+  }
 }

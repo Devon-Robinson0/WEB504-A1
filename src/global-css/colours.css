@@ -1,27 +1,27 @@
 :root {
-    --background: #F9F0E0;
-    --dark-bg: #E8D5BA;
-    --form-bg: #FFF9EF;
-    --hover-cream: #DFC9AC;
+  --background: #f9f0e0;
+  --dark-bg: #e8d5ba;
+  --form-bg: #fff9ef;
+  --hover-cream: #dfc9ac;
 
-    /* project Colours */
-    --magenta-border: #696FC7;
-    --magenta-bg: #B5BAFF;
+  /* project Colours */
+  --magenta-border: #696fc7;
+  --magenta-bg: #b5baff;
 
-    /* Skill card colours */
-    --skill-card-border: #65452F;
-    --skill-card-bg: #D8C9B5;
-    --skill: #F3EEE5;
+  /* Skill card colours */
+  --skill-card-border: #65452f;
+  --skill-card-bg: #d8c9b5;
+  --skill: #f3eee5;
 
-    /* Contact */
-    --input-bg: #DCD7CF;
+  /* Contact */
+  --input-bg: #dcd7cf;
 
-    --text-muted: #64748b;
-    --message-highlight: #e0f2f1;
+  --text-muted: #64748b;
+  --message-highlight: #e0f2f1;
 
-    --comment-btn: #0f766e;
-    --comment-btn-hover: #115e59;
-    --comment-del-btn: #b91c1c;
-    --comment-del-btn-hover: #991b1b;
-    --input-border: #94a3b8;
+  --comment-btn: #0f766e;
+  --comment-btn-hover: #115e59;
+  --comment-del-btn: #b91c1c;
+  --comment-del-btn-hover: #991b1b;
+  --input-border: #94a3b8;
 }

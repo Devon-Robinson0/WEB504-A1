@@ -29,3 +29,34 @@ export function h(tag, props = {}, ...children) {
 
   return el;
 }
+
+export async function Svg(path, props = {}) {
+  const response = await fetch(path);
+
+  if (!response.ok) {
+    throw new Error(`Could not load SVG: ${path}`);
+  }
+
+  const markup = await response.text();
+  const svgDocument = new DOMParser().parseFromString(markup, 'image/svg+xml');
+
+  if (svgDocument.querySelector('parsererror') || svgDocument.documentElement.localName !== 'svg') {
+    throw new Error(`Invalid SVG: ${path}`);
+  }
+
+  const icon = document.importNode(svgDocument.documentElement, true);
+
+  for (const [key, value] of Object.entries(props)) {
+    if (value === undefined || value === null) continue;
+
+    if (key.startsWith('on') && typeof value === 'function') {
+      icon.addEventListener(key.slice(2).toLowerCase(), value);
+    } else if (key === 'text') {
+      icon.textContent = value;
+    } else {
+      icon.setAttribute(key === 'className' ? 'class' : key, String(value));
+    }
+  }
+
+  return icon;
+}

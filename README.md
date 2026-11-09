@@ -4,18 +4,18 @@ A responsive personal portfolio website for Devon Robinson. The website presents
 
 ## Features
 
-* Home page with personal introduction and background
-* Projects page showcasing completed and ongoing projects
-* Skills page presenting technical skills and technologies
-* Contact page with a contact form
-* Responsive design for desktop, tablet, and mobile devices
-* Navigation between the main portfolio pages
-* Links to external profiles such as GitHub and LinkedIn
+- Home page with personal introduction and background
+- Projects page showcasing completed and ongoing projects
+- Skills page presenting technical skills and technologies
+- Contact page with a contact form
+- Responsive design for desktop, tablet, and mobile devices
+- Navigation between the main portfolio pages
+- Links to external profiles such as GitHub and LinkedIn
 
 ## Technologies Used
 
-* HTML5
-* CSS3
+- HTML5
+- CSS3
 
 ## Dependencies
 
