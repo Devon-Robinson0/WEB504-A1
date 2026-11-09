@@ -1,5 +1,7 @@
 import { Footer } from '/src/components/footer/footer.js';
 import { Header } from '/src/components/header/header.js';
+import { LoginArea } from '/src/components/login-area/login-area.js';
+import { PresenceIndicator } from '../components/presence-indicator/presence-indicator.js';
 import { h, Svg } from '../utils/dom.js';
 import { auth, db } from '../firebase/config.js';
 import {
@@ -33,7 +35,6 @@ const footer = document.getElementById('footer');
 footer.replaceWith(Footer());
 
 let chatBox;
-let loginArea;
 let commentInput;
 let sendBtn;
 
@@ -53,73 +54,38 @@ function stopChatListeners() {
 
 const provider = new GoogleAuthProvider();
 
-const loginBtn = h('button', {
-  text: 'Sign in',
-  type: 'button',
-  disabled: true,
-  onClick: async () => {
-    loginBtn.disabled = true;
-    errorText.textContent = '';
+const loginArea = LoginArea({
+  onLoginClick: handleLoginClick,
+});
 
-    try {
-      if (auth.currentUser) {
-        try {
-          await stopPresence();
-        } catch (error) {
-          console.error('Could not clear online presence:', error);
-        }
-
-        await signOut(auth);
-        showNotification('You have signed out.', 'success');
-      } else {
-        showNotification('Signing in...');
-
-        await signInWithPopup(auth, provider);
-
-        showNotification('Successfully signed in!', 'success');
+async function handleLoginClick() {
+  try {
+    if (auth.currentUser) {
+      try {
+        await stopPresence();
+      } catch (error) {
+        console.error('Could not clear online presence:', error);
       }
-    } catch (error) {
-      errorText.textContent = error.message;
-      showNotification('Could not complete sign-in or sign-out. Please try again.', 'error');
-      console.error('Authentication failed:', error);
-    } finally {
-      loginBtn.disabled = false;
+
+      await signOut(auth);
+      showNotification('You have signed out.', 'success');
+    } else {
+      showNotification('Signing in...');
+
+      await signInWithPopup(auth, provider);
+
+      showNotification('Successfully signed in!', 'success');
     }
-  },
-});
+  } catch (error) {
+    showNotification('Could not complete sign-in or sign-out. Please try again.', 'error');
 
-const userText = h('p', { text: 'Checking login...' });
-const errorText = h('p', { role: 'alert' });
+    console.error('Authentication failed:', error);
 
-loginArea = h('div', { className: 'login-area' }, loginBtn, userText, errorText);
+    throw error;
+  }
+}
 
-const onlineList = h('div', {
-  id: 'online-users',
-  class: 'online-list',
-});
-onlineList.hidden = true;
-
-const onlineCount = h('button', {
-  text: '0 online',
-  type: 'button',
-  'aria-expanded': 'false',
-  'aria-controls': 'online-users',
-  className: 'online-count',
-  onClick: () => {
-    onlineList.hidden = !onlineList.hidden;
-
-    onlineCount.setAttribute('aria-expanded', String(!onlineList.hidden));
-  },
-});
-
-const onlineArea = h(
-  'div',
-  {
-    className: 'online-area',
-  },
-  onlineCount,
-  onlineList,
-);
+const presenceIndicator = PresenceIndicator();
 
 let stopConnectionListener;
 let presenceRef;
@@ -158,35 +124,6 @@ async function stopPresence() {
   }
 }
 
-onAuthStateChanged(auth, (user) => {
-  stopChatListeners();
-  loginBtn.disabled = false;
-
-  if (user) {
-    userText.textContent = `Signed in as ${user.displayName}`;
-    loginBtn.textContent = 'Sign out';
-
-    stopMessagesListener = listenForMessages();
-    stopOnlineListener = listenForOnlineUsers();
-
-    if (!stopConnectionListener) {
-      startPresence(user);
-    }
-  } else {
-    stopConnectionListener?.();
-    stopConnectionListener = null;
-
-    userText.textContent = 'Sign in to leave a comment.';
-    loginBtn.textContent = 'Sign in with Google';
-
-    chatBox.replaceChildren();
-    onlineList.replaceChildren();
-    onlineCount.textContent = 'Sign in to view online users';
-    onlineList.hidden = true;
-    onlineCount.setAttribute('aria-expanded', 'false');
-  }
-});
-
 function createMain() {
   main.append(
     h('article', { className: 'heading-container' }, [
@@ -207,9 +144,9 @@ function createMain() {
           'div',
           { className: 'heading-online-container' },
           h('h2', { text: 'Live Chat' }),
-          onlineArea,
+          presenceIndicator.onlineArea,
         )),
-        loginArea,
+        loginArea.element,
       ),
 
       chatBox,
@@ -231,6 +168,26 @@ function createMain() {
   document.body.append(h('div', { id: 'notification-container' }));
 }
 createMain();
+
+onAuthStateChanged(auth, (user) => {
+  stopChatListeners();
+  loginArea.setUser(user);
+
+  if (user) {
+    stopMessagesListener = listenForMessages();
+    stopOnlineListener = listenForOnlineUsers();
+
+    if (!stopConnectionListener) {
+      startPresence(user);
+    }
+  } else {
+    stopConnectionListener?.();
+    stopConnectionListener = null;
+
+    chatBox.replaceChildren();
+    presenceIndicator.reset();
+  }
+});
 
 const touchControls = window.matchMedia('(hover: none)');
 
@@ -258,42 +215,7 @@ function listenForOnlineUsers() {
   return onValue(
     ref(db, 'presence'),
     (snapshot) => {
-      onlineList.replaceChildren();
-
-      let count = 0;
-
-      snapshot.forEach((userSnapshot) => {
-        const connections = userSnapshot.val();
-        const user = Object.values(connections)[0];
-
-        if (!user) return;
-        count++;
-
-        onlineList.append(
-          h(
-            'div',
-            { className: 'online-user' },
-            user.photoURL
-              ? h('img', {
-                  src: user.photoURL,
-                  alt: '',
-                  className: 'online-avatar',
-                  referrerpolicy: 'no-referrer',
-                })
-              : h('span', {
-                  className: 'online-avatar',
-                  text: user.name.charAt(0).toUpperCase(),
-                }),
-            h('span', { text: user.name }),
-            h('span', {
-              className: 'online-dot',
-              'aria-label': 'Online',
-            }),
-          ),
-        );
-      });
-
-      onlineCount.innerHTML = `<span class="count-dot"></span>${count} online `;
+      presenceIndicator.updateList(snapshot);
     },
     (error) => {
       showNotification('Could not load online users.', 'error');

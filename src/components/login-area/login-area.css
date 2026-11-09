@@ -1,0 +1,19 @@
+.login-area {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  gap: 10px;
+}
+.login-area p {
+  margin: 5px 0;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+.login-area button {
+  justify-self: end;
+  align-self: end;
+  width: fit-content;
+
+  padding: 10px 20px;
+}
