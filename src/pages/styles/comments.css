@@ -1,4 +1,6 @@
 @import url('../../global-css/colours.css');
+@import url('/src/components/presence-indicator/presence-indicator.css');
+@import url('/src/components/login-area/login-area.css');
 
 main {
   display: flex;
